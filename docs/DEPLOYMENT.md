@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide covers deploying the Family Tree Service to various environments.
+This guide covers deploying Family Tree Builder to various environments.
 
 ## Deployment Options
 

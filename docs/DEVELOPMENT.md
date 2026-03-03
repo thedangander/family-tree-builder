@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This guide helps you set up the development environment for the Family Tree Service.
+This guide helps you set up the development environment for Family Tree Builder.
 
 ## Prerequisites
 
@@ -30,8 +30,8 @@ This guide helps you set up the development environment for the Family Tree Serv
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/family-tree-service.git
-cd family-tree-service
+git clone https://github.com/your-org/family-tree-builder.git
+cd family-tree-builder
 ```
 
 ### 2. Install .NET 10 Preview

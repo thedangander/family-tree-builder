@@ -1,4 +1,4 @@
-# Family Tree Service
+# Family Tree Builder
 
 A full-stack application for creating, viewing, and editing family trees with a modern graph-based interface.
 
@@ -22,7 +22,7 @@ A full-stack application for creating, viewing, and editing family trees with a 
 ## 🏗️ Project Structure
 
 ```
-family-tree-service/
+family-tree-builder/
 ├── src/
 │   ├── FamilyTree.Domain/          # Domain entities and repository interfaces
 │   ├── FamilyTree.Application/     # CQRS commands, queries, and handlers

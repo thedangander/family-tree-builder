@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Family Tree Service API provides a GraphQL interface for managing family trees, persons, and relationships.
+The Family Tree Builder API provides a GraphQL interface for managing family trees, persons, and relationships.
 
 ## Base URL
 

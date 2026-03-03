@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Family Tree Service follows Clean Architecture principles, separating concerns into distinct layers that depend inward toward the domain core.
+Family Tree Builder follows Clean Architecture principles, separating concerns into distinct layers that depend inward toward the domain core.
 
 ## Architectural Layers
 
