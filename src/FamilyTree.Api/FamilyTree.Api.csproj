@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="14.2.0" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="14.2.0" />
+    <PackageReference Include="HotChocolate.Data" Version="14.2.0" />
+    <PackageReference Include="WolverineFx" Version="3.8.0" />
+    <PackageReference Include="WolverineFx.Http" Version="3.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0-preview.1.25120.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FamilyTree.Application\FamilyTree.Application.csproj" />
+    <ProjectReference Include="..\FamilyTree.Infrastructure\FamilyTree.Infrastructure.csproj" />
+    <ProjectReference Include="..\FamilyTree.ServiceDefaults\FamilyTree.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,70 @@
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:8.0
+    container_name: familytree-mongodb
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    environment:
+      - MONGO_INITDB_DATABASE=FamilyTreeDb
+    networks:
+      - familytree-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # .NET API Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: familytree-api
+    restart: unless-stopped
+    ports:
+      - "5001:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDB__ConnectionString=mongodb://mongodb:27017
+      - MongoDB__DatabaseName=FamilyTreeDb
+      - Cors__AllowedOrigins=http://localhost:3000
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - familytree-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # React Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: familytree-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - familytree-network
+
+volumes:
+  mongodb_data:
+  mongodb_config:
+
+networks:
+  familytree-network:
+    driver: bridge
